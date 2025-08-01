@@ -30,6 +30,9 @@ production: &prod_db
 queue:
   <<: *prod_db
 
+cache:
+  <<: *prod_db
+
 # cable:
 #   adapter: postgresql
 #   encoding: unicode
