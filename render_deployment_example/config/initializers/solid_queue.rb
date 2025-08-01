@@ -1,0 +1,1 @@
+SolidQueue.connects_to = Rails.application.config.solid_queue.connects_to if Rails.application.config.solid_queue.respond_to?(:connects_to)
