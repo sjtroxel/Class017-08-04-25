@@ -1,8 +1,8 @@
 databases:
-  - name: renderdeploymentexamplesjtroxel
-    databaseName: renderdeploymentexamplesjtroxel
-    user: renderdeploymentexamplesjtroxel
-    plan: free
+  # - name: renderdeploymentexamplesjtroxel
+  #   databaseName: renderdeploymentexamplesjtroxel
+  #   user: renderdeploymentexamplesjtroxel
+  #   plan: free
 
   - name: pickupsportssjtroxel
     databaseName: pickupsportssjtroxel
@@ -10,21 +10,21 @@ databases:
     plan: free
 
 services:
-  - type: web
-    name: renderdeploymentexamplesjtroxel
-    runtime: ruby
-    plan: free
-    buildCommand: 'cd render_deployment_example && ./bin/render-build.sh'
-    startCommand: 'cd render_deployment_example && ./bin/rails server'
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: renderdeploymentexamplesjtroxel
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
-      - key: WEB_CONCURRENCY
-        value: 2 # sensible default
+  # - type: web
+  #   name: renderdeploymentexamplesjtroxel
+  #   runtime: ruby
+  #   plan: free
+  #   buildCommand: 'cd render_deployment_example && ./bin/render-build.sh'
+  #   startCommand: 'cd render_deployment_example && ./bin/rails server'
+  #   envVars:
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: renderdeploymentexamplesjtroxel
+  #         property: connectionString
+  #     - key: RAILS_MASTER_KEY
+  #       sync: false
+  #     - key: WEB_CONCURRENCY
+  #       value: 2 # sensible default
 
   - type: web
     name: pickupsportssjtroxel
