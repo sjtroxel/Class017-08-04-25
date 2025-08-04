@@ -4,9 +4,14 @@ databases:
   #   user: renderdeploymentexamplesjtroxel
   #   plan: free
 
-  - name: pickupsportssjtroxel
-    databaseName: pickupsportssjtroxel
-    user: pickupsportssjtroxel
+  # - name: pickupsportssjtroxel
+  #   databaseName: pickupsportssjtroxel
+  #   user: pickupsportssjtroxel
+  #   plan: free
+
+  - name: booksappsjtroxel
+    databaseName: booksappsjtroxel
+    user: booksappsjtroxel
     plan: free
 
 services:
@@ -26,16 +31,32 @@ services:
   #     - key: WEB_CONCURRENCY
   #       value: 2 # sensible default
 
+  # - type: web
+  #   name: pickupsportssjtroxel
+  #   runtime: ruby
+  #   plan: free
+  #   buildCommand: 'cd pickup_sports_api && ./bin/render-build.sh'
+  #   startCommand: 'cd pickup_sports_api && ./bin/rails server'
+  #   envVars:
+  #     - key: DATABASE_URL
+  #       fromDatabase:
+  #         name: pickupsportssjtroxel
+  #         property: connectionString
+  #     - key: RAILS_MASTER_KEY
+  #       sync: false
+  #     - key: WEB_CONCURRENCY
+  #       value: 2
+
   - type: web
-    name: pickupsportssjtroxel
+    name: booksappsjtroxel
     runtime: ruby
     plan: free
-    buildCommand: 'cd pickup_sports_api && ./bin/render-build.sh'
-    startCommand: 'cd pickup_sports_api && ./bin/rails server'
+    buildCommand: 'cd books_api && ./bin/render-build.sh'
+    startCommand: 'cd books_api && ./bin/rails server'
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: pickupsportssjtroxel
+          name: booksappsjtroxel
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
